@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td,
+        th {
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="tabel"></div>
+    
+    <script>
+        let tabelData = document.querySelector('.tabel');
+        let mahasiswa = [
+            {
+                no: "1",
+                nama: "Boy",
+                nim: "123",
+                nilai: "60",
+                grade: ""
+            },
+            {
+                no: "2",
+                nama: "Aldi",
+                nim: "124",
+                nilai: "75",
+                grade: ""
+            },
+            {
+                no: "3",
+                nama: "Ade",
+                nim: "125",
+                nilai: "40",
+                grade: ""
+            },
+            {
+                no: "4",
+                nama: "Ridwan",
+                nim: "127",
+                nilai: "50",
+                grade: ""
+            },
+            {
+                no: "5",
+                nama: "Lela",
+                nim: "128",
+                nilai: "90",
+                grade: ""
+            },
+            {
+                no: "6",
+                nama: "Ujang",
+                nim: "129",
+                nilai: "85",
+                grade: ""
+            },
+            {
+                no: "7",
+                nama: "Rina",
+                nim: "130",
+                nilai: "70",
+                grade: ""
+            },
+            {
+                no: "8",
+                nama: "Sindu",
+                nim: "131",
+                nilai: "55",
+                grade: ""
+            },
+            {
+                no: "9",
+                nama: "Fandi",
+                nim: "132",
+                nilai: "78",
+                grade: ""
+            },
+            {
+                no: "10",
+                nama: "Randy",
+                nim: "126",
+                nilai: "90",
+                grade: ""
+            },
+        ];
+        for (i = 0; i < 10; i++) {
+            if (mahasiswa[i].nilai >= 80) {
+                mahasiswa[i].grade = "A"
+            } else if (mahasiswa[i].nilai < 80 && mahasiswa[i].nilai >= 70) {
+                mahasiswa[i].grade = "AB"
+            } else if (mahasiswa[i].nilai < 70 && mahasiswa[i].nilai >= 60) {
+                mahasiswa[i].grade = "B"
+            } else if (mahasiswa[i].nilai < 60 && mahasiswa[i].nilai >= 50) {
+                mahasiswa[i].grade = "BC"
+            } else if (mahasiswa[i].nilai < 50 && mahasiswa[i].nilai >= 40) {
+                mahasiswa[i].grade = "C"
+            } else if (mahasiswa[i].nilai < 40 && mahasiswa[i].nilai >= 10) {
+                mahasiswa[i].grade = "D"
+            } else if (mahasiswa[i].nilai < 10) {
+                mahasiswa[i].grade = "E"
+            }
+        }
+        let kepalaTabel = ["No", "Nama", "NIM", "Nilai", "Grade"];
+
+        let tabel = document.createElement('table');
+        let barisKepala = document.createElement('tr');
+        kepalaTabel.forEach(headerText => {
+            let kepala = document.createElement('th');
+            let textNode = document.createTextNode(headerText);
+            kepala.appendChild(textNode);
+            barisKepala.appendChild(kepala);
+        });
+        tabel.appendChild(barisKepala);
+        mahasiswa.forEach(IsiTabel => {
+            let row = document.createElement('tr');
+            Object.values(IsiTabel).forEach(text => {
+                let cell = document.createElement('td');
+                let textNode = document.createTextNode(text);
+                cell.appendChild(textNode);
+                row.appendChild(cell);
+            })
+            tabel.appendChild(row);
+        });
+        tabelData.appendChild(tabel);
+    </script>
+</body>
+
+</html>
+" Tugas1Individu" 
